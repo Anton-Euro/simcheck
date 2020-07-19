@@ -15,7 +15,7 @@ def start(message):
 		t = json.loads(t.replace("'",'"'))
 		google = t["google"]['Qty']
 		if google != google_last:
-			bot.send_message(message.chat.id, "Есть " + str(google[i]) +  " шт.")
+			bot.send_message(message.chat.id, "Есть " + str(google) +  " шт.")
 			google_last = google
 		else:
 			google_last = google
