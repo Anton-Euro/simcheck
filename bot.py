@@ -1,3 +1,6 @@
+# https://5sim.net/v1/guest/products/ghana/virtual2
+# https://5sim.net/v1/guest/products/russia/any
+
 import config
 import telebot
 import requests
@@ -11,7 +14,7 @@ def start(message):
 	bot.send_message(message.chat.id, "Поиск начался")
 	google_last = 0
 	while True:	
-		t = requests.get("https://5sim.net/v1/guest/products/russia/any").text
+		t = requests.get("https://5sim.net/v1/guest/products/ghana/virtual2").text
 		t = json.loads(t.replace("'",'"'))
 		google = t["google"]['Qty']
 		if google != google_last:
