@@ -22,6 +22,6 @@ def start(message):
 			google_last = google
 		else:
 			google_last = google
-		time.sleep(20)
+		time.sleep(10)
 
 bot.polling(none_stop=True)
