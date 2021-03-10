@@ -45,6 +45,7 @@ def start(message):
 			google_last = google
 		else:
 			google_last = google
+	bot.send_message(message.chat.id, "Поиск закончился")
 		
 
 bot.polling(none_stop=True)
