@@ -19,13 +19,19 @@ def start(message):
 	google_last = 0
 	while True:	
 		t = requests.get("https://vak-sms.com/api/getCountNumber/?apiKey=489f298673794679af08f0165f1acfa9&service=gl&country=ru&price").text
+		time.sleep(60)
 		google = t.split()[1][:-1]
 		if google != google_last:
 			google_beeline = requests.get("https://vak-sms.com/api/getCountNumber/?apiKey=489f298673794679af08f0165f1acfa9&service=gl&country=ru&operator=beeline&price").text
+			time.sleep(60)
 			google_lycamobile = requests.get("https://vak-sms.com/api/getCountNumber/?apiKey=489f298673794679af08f0165f1acfa9&service=gl&country=ru&operator=lycamobile&price").text
+			time.sleep(60)
 			google_megafon = requests.get("https://vak-sms.com/api/getCountNumber/?apiKey=489f298673794679af08f0165f1acfa9&service=gl&country=ru&operator=megafon&price").text
+			time.sleep(60)
 			google_mts = requests.get("https://vak-sms.com/api/getCountNumber/?apiKey=489f298673794679af08f0165f1acfa9&service=gl&country=ru&operator=mts&price").text
+			time.sleep(60)
 			google_rostelecom = requests.get("https://vak-sms.com/api/getCountNumber/?apiKey=489f298673794679af08f0165f1acfa9&service=gl&country=ru&operator=rostelecom&price").text
+			time.sleep(60)
 			google_tele2 = requests.get("https://vak-sms.com/api/getCountNumber/?apiKey=489f298673794679af08f0165f1acfa9&service=gl&country=ru&operator=tele2&price").text
 			
 			google_beeline = google_beeline.split()[1][:-1]
@@ -39,6 +45,6 @@ def start(message):
 			google_last = google
 		else:
 			google_last = google
-		time.sleep(100)
+		
 
 bot.polling(none_stop=True)
